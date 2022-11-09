@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Zen Antique', serif;
+    font-size: 10px;
+}
+
+@mixin flex ($flex-direction, $align-items, $justify-content){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+.header{
+    background-image: url(./assets/images/books-hero-dark.jpg);
+    height: 500px;
+    width: 1600px;
+    margin: auto;
+    @include flex(row, center, center)
+
+}
+
+.header__title{
+    color: white;
+    font-size: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+
+}
+
+.catalog{
+    @include flex(column, center, center);
+    width: 1600px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.catalog__title{
+    font-size: 4rem;
+}
