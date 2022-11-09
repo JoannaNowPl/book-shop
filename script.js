@@ -27,16 +27,28 @@ catalog.classList.add("catalog");
 
 main.append(catalog);
 
-const bookCatalog=document.createElement("h2");
-bookCatalog.classList.add("catalog__title");
-bookCatalog.innerText = "Book catalog";
+const bookCatalogTitle=document.createElement("h2");
+bookCatalogTitle.classList.add("catalog__title");
+bookCatalogTitle.innerText = "Book catalog";
 
-catalog.append(bookCatalog);
+
+
+const bookCardsDiv = document.createElement("div");
+bookCardsDiv.classList.add("catalog__book-cards-box");
+
+catalog.append(bookCatalogTitle, bookCardsDiv);
 
 function createBookCard(books) {
     for (const book of books) {
         const bookCard = document.createElement("article");
         bookCard.classList.add("catalog__book-card");
+
+        const bookImg=document.createElement("img");
+        bookImg.classList.add("catalog__book-image");
+        bookImg.src=(book.imageLink);
+
+        const bookInfoDiv =  document.createElement("div");
+        bookInfoDiv.classList.add("catalog__book-info-box");
 
         const bookTitle = document.createElement("h3");
         bookTitle.classList.add("catalog__book-title");
@@ -47,10 +59,12 @@ function createBookCard(books) {
         bookAuthor.innerText=(book.author);
 
         const bookDescription = document.createElement("p");
-        bookDescription.classList.add("catalog__book-author");
+        bookDescription.classList.add("catalog__book-description");
         bookDescription.innerText=(book.description);
 
-        bookCard.append(bookTitle, bookAuthor, bookDescription);
-        catalog.append(bookCard);
+        bookInfoDiv.append(bookTitle, bookAuthor, bookDescription)
+
+        bookCard.append(bookImg, bookInfoDiv);
+        bookCardsDiv.append(bookCard);
 }
 }

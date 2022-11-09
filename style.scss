@@ -34,7 +34,7 @@
 }
 
 .catalog{
-    @include flex(column, center, center);
+    @include flex(column, flex-start, center);
     width: 1600px;
     margin: auto;
     padding: 40px 0;
@@ -42,4 +42,37 @@
 
 .catalog__title{
     font-size: 4rem;
+    padding-bottom: 40px
+}
+
+.catalog__book-cards-box{
+    display: grid;
+    grid-template-columns: (1fr 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+}
+
+.catalog__book-card{
+    @include flex(row, flex-start, center);
+    width: 700px;
+}
+
+.catalog__book-image{
+    width: 200px;
+}
+
+.catalog__book-info-box{
+    @include flex(column, flex-start, center);
+    padding-left: 30px;
+}
+
+.catalog__book-title{
+    font-size: 2.4rem;
+}
+
+.catalog__book-author{
+    font-size: 2rem;
+}
+.catalog__book-description{
+    font-size: 1.6rem;
 }
