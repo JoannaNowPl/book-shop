@@ -34,7 +34,7 @@
 }
 
 .catalog{
-    @include flex(column, flex-start, center);
+    @include flex(column, center, center);
     width: 1600px;
     margin: auto;
     padding: 40px 0;
@@ -42,7 +42,10 @@
 
 .catalog__title{
     font-size: 4rem;
-    padding-bottom: 40px
+    text-transform: uppercase;
+    align-self: flex-start;
+    padding-bottom: 80px;
+    padding-left: 80px
 }
 
 .catalog__book-cards-box{
@@ -55,6 +58,8 @@
 .catalog__book-card{
     @include flex(row, flex-start, center);
     width: 700px;
+    box-shadow: 3px 3px 10px -1px #567c7c;
+    padding: 20px;
 }
 
 .catalog__book-image{
@@ -72,7 +77,15 @@
 
 .catalog__book-author{
     font-size: 2rem;
+    padding: 8px 0 16px 0;
 }
+
+.catalog__book-price{
+font-size: 1.8rem;
+font-weight: 700;
+padding-bottom: 16px;
+}
+
 .catalog__book-description{
     font-size: 1.6rem;
 }

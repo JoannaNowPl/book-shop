@@ -58,11 +58,15 @@ function createBookCard(books) {
         bookAuthor.classList.add("catalog__book-author");
         bookAuthor.innerText=(book.author);
 
+        const bookPrice = document.createElement("p");
+        bookPrice.classList.add("catalog__book-price");
+        bookPrice.innerText=(`Price: ${book.price} $`);
+
         const bookDescription = document.createElement("p");
         bookDescription.classList.add("catalog__book-description");
         bookDescription.innerText=(book.description);
 
-        bookInfoDiv.append(bookTitle, bookAuthor, bookDescription)
+        bookInfoDiv.append(bookTitle, bookAuthor, bookPrice, bookDescription)
 
         bookCard.append(bookImg, bookInfoDiv);
         bookCardsDiv.append(bookCard);
