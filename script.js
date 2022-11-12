@@ -31,10 +31,11 @@ const bookCatalogTitle=document.createElement("h2");
 bookCatalogTitle.classList.add("catalog__title");
 bookCatalogTitle.innerText = "Book catalog";
 
-
-
 const bookCardsDiv = document.createElement("div");
 bookCardsDiv.classList.add("catalog__book-cards-box");
+
+
+
 
 catalog.append(bookCatalogTitle, bookCardsDiv);
 
@@ -66,16 +67,29 @@ function createBookCard(books) {
         addToCart.classList.add("catalog__add-to-cart-button")
         addToCart.innerText="Add to Cart";
 
-        // const bookDescription = document.createElement("p");
-        // bookDescription.classList.add("catalog__book-description");
-        // bookDescription.innerText=(book.description);
-
         const showDescription = document.createElement("span");
         showDescription.classList.add("catalog__show-description")
+        showDescription.addEventListener("click", ()=> bookDescriptionModal.style.display="flex")
         showDescription.innerText=("More info...");
+
+        const bookDescriptionModal = document.createElement("div");
+        bookDescriptionModal.classList.add("catalog__book-description-modal");
+
+        const bookDescription = document.createElement("p");
+        bookDescription.classList.add("catalog__book-description");
+        bookDescription.innerText=(book.description);
+
+        const closeDescription = document.createElement("button");
+        closeDescription.classList.add("catalog__close-description-button");
+        closeDescription.innerText=("Close")
+        closeDescription.addEventListener("click", ()=> bookDescriptionModal.style.display="none")
+
+        bookDescriptionModal.append(bookDescription, closeDescription)
+
         bookInfoDiv.append(bookTitle, bookAuthor, bookPrice, addToCart, showDescription)
 
         bookCard.append(bookImg, bookInfoDiv);
         bookCardsDiv.append(bookCard);
+        catalog.prepend(bookDescriptionModal)
 }
 }
