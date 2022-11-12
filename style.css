@@ -70,8 +70,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding-left: 30px;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 5px 15px 10px 30px;
 }
 
 .catalog__book-title {
@@ -80,13 +82,44 @@
 
 .catalog__book-author {
   font-size: 2rem;
-  padding: 8px 0 16px 0;
+  padding: 0;
 }
 
 .catalog__book-price {
   font-size: 1.8rem;
   font-weight: 700;
-  padding-bottom: 16px;
+  padding-top: 30px;
+}
+
+.catalog__add-to-cart-button {
+  background-color: #1e8585;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.catalog__add-to-cart-button:hover {
+  background-color: #25b3b3;
+}
+
+.catalog__add-to-cart-button:active {
+  background-color: #f1de2f;
+  color: #1e8585;
+}
+
+.catalog__show-description {
+  font-size: 1.6rem;
+  color: #1e8585;
+  cursor: pointer;
+}
+
+.catalog__show-description:hover {
+  color: #25b3b3;
 }
 
 .catalog__book-description {

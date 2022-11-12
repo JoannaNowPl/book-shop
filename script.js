@@ -62,11 +62,18 @@ function createBookCard(books) {
         bookPrice.classList.add("catalog__book-price");
         bookPrice.innerText=(`Price: ${book.price} $`);
 
-        const bookDescription = document.createElement("p");
-        bookDescription.classList.add("catalog__book-description");
-        bookDescription.innerText=(book.description);
+        const addToCart = document.createElement("button");
+        addToCart.classList.add("catalog__add-to-cart-button")
+        addToCart.innerText="Add to Cart";
 
-        bookInfoDiv.append(bookTitle, bookAuthor, bookPrice, bookDescription)
+        // const bookDescription = document.createElement("p");
+        // bookDescription.classList.add("catalog__book-description");
+        // bookDescription.innerText=(book.description);
+
+        const showDescription = document.createElement("span");
+        showDescription.classList.add("catalog__show-description")
+        showDescription.innerText=("More info...");
+        bookInfoDiv.append(bookTitle, bookAuthor, bookPrice, addToCart, showDescription)
 
         bookCard.append(bookImg, bookInfoDiv);
         bookCardsDiv.append(bookCard);

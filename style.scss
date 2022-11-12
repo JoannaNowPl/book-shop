@@ -9,6 +9,10 @@
     font-size: 10px;
 }
 
+$color-interactive: #1e8585;
+$color-hover:#25b3b3;
+$color-active:  #f1de2f;
+
 @mixin flex ($flex-direction, $align-items, $justify-content){
     display: flex;
     flex-direction: $flex-direction;
@@ -67,8 +71,10 @@
 }
 
 .catalog__book-info-box{
-    @include flex(column, flex-start, center);
-    padding-left: 30px;
+    @include flex(column, flex-start, space-between );
+    height: 100%;
+    width: 100%;
+    padding: 5px 15px 10px 30px;
 }
 
 .catalog__book-title{
@@ -77,13 +83,46 @@
 
 .catalog__book-author{
     font-size: 2rem;
-    padding: 8px 0 16px 0;
+    padding: 0
 }
 
 .catalog__book-price{
 font-size: 1.8rem;
 font-weight: 700;
-padding-bottom: 16px;
+padding-top: 30px;
+
+}
+
+.catalog__add-to-cart-button{
+    background-color:$color-interactive;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 8px 12px;
+    font-size: 1.6rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-right: 10px;
+   
+}
+
+.catalog__add-to-cart-button:hover{
+    background-color:$color-hover;
+}
+
+.catalog__add-to-cart-button:active{
+    background-color: $color-active;
+    color:$color-interactive;
+}
+
+
+.catalog__show-description{
+    font-size: 1.6rem;
+    color: $color-interactive;
+    cursor: pointer;
+}
+.catalog__show-description:hover{
+    color:$color-hover;
 }
 
 .catalog__book-description{
