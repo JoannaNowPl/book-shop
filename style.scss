@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Zen Antique', serif;
+    font-size: 10px;
+}
+
+$color-interactive: #1e8585;
+$color-hover:#25b3b3;
+$color-active:  #f1de2f;
+
+@mixin flex ($flex-direction, $align-items, $justify-content){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+.header{
+    background-image: url(./assets/images/books-hero-dark.jpg);
+    height: 500px;
+    width: 1600px;
+    margin: auto;
+    @include flex(row, center, center)
+
+}
+
+.header__title{
+    color: white;
+    font-size: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+
+}
+
+.catalog{
+    @include flex(column, center, center);
+    width: 1600px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.catalog__title{
+    font-size: 4rem;
+    text-transform: uppercase;
+    align-self: flex-start;
+    padding-bottom: 80px;
+    padding-left: 80px
+}
+
+.catalog__book-cards-box{
+    display: grid;
+    grid-template-columns: (1fr 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+}
+
+.catalog__book-card{
+    @include flex(row, flex-start, center);
+    width: 700px;
+    box-shadow: 3px 3px 10px -1px #567c7c;
+    padding: 20px;
+}
+
+.catalog__book-image{
+    width: 200px;
+}
+
+.catalog__book-info-box{
+    @include flex(column, flex-start, space-between );
+    height: 100%;
+    width: 100%;
+    padding: 5px 15px 10px 30px;
+}
+
+.catalog__book-title{
+    font-size: 2.4rem;
+}
+
+.catalog__book-author{
+    font-size: 2rem;
+    padding: 0
+}
+
+.catalog__book-price{
+font-size: 1.8rem;
+font-weight: 700;
+padding-top: 30px;
+
+}
+
+.catalog__add-to-cart-button,
+.catalog__close-description-button{
+    background-color:$color-interactive;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 8px 12px;
+    font-size: 1.6rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.catalog__add-to-cart-button:hover,
+.catalog__close-description-button:hover{
+    background-color:$color-hover;
+}
+
+.catalog__add-to-cart-button:active,
+.catalog__close-description-button:active{
+    background-color: $color-active;
+    color:$color-interactive;
+}
+
+
+.catalog__show-description{
+    font-size: 1.6rem;
+    color: $color-interactive;
+    cursor: pointer;
+}
+.catalog__show-description:hover{
+    color:$color-hover;
+}
+
+.catalog__book-description-modal{
+    width: 600px;
+    height: 300px;
+    box-shadow: 3px 3px 10px -1px #567c7c;
+    background-color:#adcece;
+    background: linear-gradient(135deg, rgba(254,255,140,0.99) 0%, rgba(141,205,205,0.99) 50%, rgba(131,203,203,0.99) 78%, rgba(37,179,179,0.99) 100%);
+    display: none;
+    position: fixed;
+    top: 350px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+
+.catalog__book-description{
+    font-size: 1.6rem;
+    padding: 20px 30px;
+}
+
+.catalog__close-description-button{
+    margin: 20px auto 0 auto;
+}
