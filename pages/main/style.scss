@@ -21,20 +21,23 @@ $color-active:  #f1de2f;
 }
 
 .header{
-    background-image: url(./assets/images/books-hero-dark.jpg);
+    background-image: url(../../assets/images/books-hero-light.jpg);
     height: 500px;
     width: 1600px;
     margin: auto;
+    background-position: center;
     @include flex(row, center, center)
 
 }
 
 .header__title{
-    color: white;
-    font-size: 7rem;
+    color:white;
+    font-size: 6rem;
     text-transform: uppercase;
     letter-spacing: 6px;
-
+    padding: 30px 60px;
+    background-color:rgb(49, 49, 49);
+    border-radius: 10px;
 }
 
 .catalog{
@@ -138,7 +141,7 @@ padding-top: 30px;
     top: 350px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .catalog__book-description{

@@ -1,9 +1,8 @@
 async function getData () {
-    const URL = "./books.json";
+    const URL = "../../books.json";
     const request = new Request(URL);
     const response = await fetch(request);
     const books = await response.json();
-    console.log(books)
     createBookCard(books);
 
 }
